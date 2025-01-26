@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コーディング練習</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- section 01 -->
+    <div class="header">
+        <nav class="navbar">
+            <h2 class="logo">TERA</h2>
+            <ul class="menu">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">本サイトについて</a></li>
+                <li><a href="#">ブログ</a></li>
+                <li><a href="#">オンライン相談</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="sec-01">
+        <div class="container">
+            <h2 class="main-title">Scroll Reveal Tutorial</h2>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/IMG_9751.PNG" alt="自然豊かな風景画像">
+                </div>
+                <div class="text-box">
+                    <h3>TERA Code</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, porro? Aliquam numquam delectus tempore, porro voluptate aut necessitatibus iste dolores?</p>
+                </div>
+            </div>
+            <div class="media-icons">
+                <a href="./images/facebook.png" class="icon"><i class="fab fa-facebook"></i></a>
+                <a href="./images/instagram.png" class="icon"><i class="fab fa-instagram"></i></a>
+                <a href="./images/twitter.png" class="icon"><i class="fab fa-twitter"></i></a>
+                <a href="./images/youtube.png" class="icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+    
+<!-- section 02 -->
+    <section class="sec-02">
+        <div class="container">
+            <h3 class="section-title">TERA Tutorial</h3>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/IMG_9608.PNG" alt="自然豊かな風景画像">
+                </div>
+                <div class="info">
+                    <h4 class="info-title">Description</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo accusantium temporibus cum ex, odio libero similique quam doloribus numquam harum? Beatae ea doloribus excepturi iure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section03 -->
+    <section class="sec-03">
+        <div class="container">
+            <h3 class="section-title">TERA Code</h3>
+            <div class="content">
+                <div class="media-info">
+                    <ul>
+                        <li><a href="./images/facebook.png" class="icon"><i class="fab fa-facebook"></i>Facebook</a></li>
+                        <li><a href="./images/instagram.png" class="icon"><i class="fab fa-instagram"></i>Instagram</a></li>
+                        <li><a href="./images/twitter.png" class="icon"><i class="fab fa-twitter"></i>Twitter</a></li>
+                        <li><a href="./images/youtube.png" class="icon"><i class="fab fa-youtube"></i>Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                        <img src="./images/IMG_9446.png" alt="自然豊かな風景画像">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true, distance: "60px", duration: 2000, delay: 200, });
+        ScrollReveal().reveal('.main-title, .section-title', { delay: 200, origin: "left" });
+        ScrollReveal().reveal('.sec-01 .image, .info', { delay: 200, origin: "bottom" });
+        ScrollReveal().reveal('.text-box', { delay: 700, origin: "right" });
+        ScrollReveal().reveal('.media-icons', { delay: 500, origin: "bottom", interval: 200 });
+        ScrollReveal().reveal('.sec-02 .image, .sec-03 .image', { delay: 500, origin: "top", interval: 200 });
+
+        ScrollReveal().reveal('.media-info li', { delay: 500, origin: "left", interval: 200 });
+    </script>
+
+    <script>
+       const navbar = document.querySelector(".navbar");
+       const menu = document.querySelector(".menu");
+    // へっだーがulタグの位置に来たら、ヘッダーを固定する。
+    window.addEventListener("scroll", () => {
+      if(window.pageYOffset >= menu.offsetTop) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    })
+    </script>
+    
+</body>
+</html>
